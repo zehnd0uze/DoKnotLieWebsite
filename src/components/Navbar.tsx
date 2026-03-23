@@ -26,6 +26,7 @@ const Navbar: React.FC = () => {
       </div>
       <ul className="navbar-links">
         <li onClick={() => scrollToSection('story')}>CASE FILE</li>
+        <li onClick={() => scrollToSection('videos')}>TRAILERS</li>
         <li onClick={() => scrollToSection('chapters')}>CHAPTERS</li>
         <li onClick={() => scrollToSection('multiplayer')}>MULTIPLAYER</li>
         <li onClick={() => scrollToSection('features')}>MECHANICS</li>

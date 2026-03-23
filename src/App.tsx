@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import SidebarNav from './components/SidebarNav'
 import Multiplayer from './components/Multiplayer'
+import Videos from './components/Videos'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Hero />
       </div>
       <Story />
+      <Videos />
       <Chapters />
       <Multiplayer />
       <Features />

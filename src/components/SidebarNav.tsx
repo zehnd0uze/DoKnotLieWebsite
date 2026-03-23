@@ -6,6 +6,7 @@ const SidebarNav: React.FC = () => {
   const sections = [
     { id: 'hero', label: 'TOP' },
     { id: 'story', label: 'STORY' },
+    { id: 'videos', label: 'TRAILERS' },
     { id: 'chapters', label: 'CASES' },
     { id: 'multiplayer', label: 'MULTIPLAYER' },
     { id: 'features', label: 'PLAY' },
