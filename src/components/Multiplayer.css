@@ -181,15 +181,42 @@
 }
 
 @media (max-width: 768px) {
+  .multiplayer-section {
+    padding: 4rem 1.5rem;
+  }
+  .multiplayer-header {
+    margin-bottom: 2.5rem;
+  }
+  .thai-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .multiplayer-intro {
+    margin-bottom: 2rem;
+  }
+  .intro-text {
+    font-size: 1.1rem;
+  }
   .multiplayer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
   
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .leaderboard-image-container {
-    height: 300px;
+    height: 250px;
+  }
+  .leaderboard-title {
+    font-size: 1.8rem;
+  }
+  .multi-info {
+    padding: 1.5rem;
+  }
+  .multi-feature-title {
+    font-size: 1.3rem;
   }
 }

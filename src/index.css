@@ -87,3 +87,8 @@ ul {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   border: 1px solid #333;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}

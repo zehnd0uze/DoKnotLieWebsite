@@ -93,10 +93,19 @@
 }
 
 @media (max-width: 768px) {
+  .story-section {
+    padding: 2rem 1rem;
+  }
+  .terminal-container {
+    padding: 15px;
+    border-radius: 10px;
+  }
   .terminal-screen {
-    height: 500px;
+    padding: 15px;
+    height: 450px;
   }
   .terminal-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
