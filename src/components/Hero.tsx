@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           <button className="hero-btn start" onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}>
             <span>START INVESTIGATION</span>
           </button>
-          <button className="hero-btn trailer" onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button className="hero-btn trailer" onClick={() => document.getElementById('videos')?.scrollIntoView({ behavior: 'smooth' })}>
             <span>WATCH TRAILER</span>
           </button>
         </div>
