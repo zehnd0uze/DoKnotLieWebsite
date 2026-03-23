@@ -1,0 +1,89 @@
+:root {
+  --color-black: #050505;
+  --color-charcoal: #1a1a1a;
+  --color-police-red: #d32f2f;
+  --color-police-blue: #1976d2;
+  --color-blood-red: #8b0000;
+  --color-spotlight-yellow: #ffeb3b;
+  --color-evidence-white: #f5f5f5;
+  --color-neon-amber: #ffb300;
+  
+  --font-body: 'Montserrat', sans-serif;
+  --font-detail: 'Share Tech Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-evidence-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Animations */
+@keyframes sirenRed {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.8; box-shadow: 0 0 50px 20px rgba(211, 47, 47, 0.4); }
+  100% { opacity: 0.1; }
+}
+
+@keyframes sirenBlue {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.8; box-shadow: 0 0 50px 20px rgba(25, 118, 210, 0.4); }
+  100% { opacity: 0.1; }
+}
+
+@keyframes fogMove {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-5vw) translateY(-2vh); }
+}
+
+.police-tape {
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--color-evidence-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 2px solid var(--color-spotlight-yellow);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.police-tape:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.evidence-marker {
+  color: var(--color-black);
+  background-color: var(--color-spotlight-yellow);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 900;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+}

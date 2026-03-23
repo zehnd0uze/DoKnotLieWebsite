@@ -1,0 +1,223 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-black);
+  background-image: url('/park.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Fog effect using multiple layered pseudo-elements or divs */
+.fog-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  background: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+  animation: fogMove 60s linear infinite alternate;
+}
+
+.fog-layer-2 {
+  animation: fogMove 80s linear infinite alternate-reverse;
+  opacity: 0.1;
+  transform: scale(1.5);
+}
+
+/* Flashing Police Lights */
+.police-light {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: screen;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.red-light {
+  background: radial-gradient(circle at 20% 50%, rgba(211, 47, 47, 0.5) 0%, rgba(211, 47, 47, 0) 60%);
+  animation: lightFlash 2s ease-in-out infinite alternate;
+}
+
+.blue-light {
+  background: radial-gradient(circle at 80% 50%, rgba(25, 118, 210, 0.5) 0%, rgba(25, 118, 210, 0) 60%);
+  animation: lightFlash 2.3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes lightFlash {
+  0%, 20% { opacity: 0.1; }
+  50%, 80% { opacity: 0.8; }
+  100% { opacity: 0.1; }
+}
+
+/* Harsh spotlight crossing removed based on user feedback */
+.spotlight {
+  display: none;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero-logo-img {
+  max-width: 800px;
+  width: 90%;
+  object-fit: contain;
+  /* Invert white background to black and screen it out to blend seamlessly */
+  filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 20px rgba(139, 0, 0, 0.6));
+  mix-blend-mode: screen;
+  animation: pulseLogo 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(1); filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 10px rgba(139, 0, 0, 0.4)); }
+  100% { transform: scale(1.02); filter: invert(1) hue-rotate(180deg) drop-shadow(0 15px 25px rgba(139, 0, 0, 0.8)); }
+}
+
+.hero-tagline {
+  font-size: 1.8rem;
+  font-family: var(--font-detail);
+  color: var(--color-evidence-white);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 5px #000;
+  max-width: 800px;
+}
+
+/* Call to Action Container */
+.cta-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+/* Evidence Marker Button styling */
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.hero-btn {
+  padding: 0.8rem 2rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 25%, 100% 100%, 5% 100%, 0% 75%);
+  border: none;
+}
+
+.hero-btn.start {
+  background-color: #ff0000;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.hero-btn.start:hover {
+  background-color: #fff;
+  color: #ff0000;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.hero-btn.trailer {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  clip-path: polygon(5% 0%, 100% 0%, 100% 75%, 95% 100%, 0% 100%, 0% 25%);
+}
+
+.hero-btn.trailer:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ff0000;
+  color: #ff0000;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px #ff0000;
+}
+
+.hero-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.scroll-arrow {
+  width: 15px;
+  height: 15px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: rotate(45deg) translate(0, 0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(45deg) translate(10px, 10px); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-logo { font-size: 3.5rem; }
+  .hero-tagline { font-size: 1.2rem; }
+  .cta-container { flex-direction: column; }
+}

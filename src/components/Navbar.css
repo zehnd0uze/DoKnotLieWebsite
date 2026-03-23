@@ -1,0 +1,90 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.navbar.scrolled {
+  padding: 1rem 4rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  color: #999;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li:hover {
+  color: #fff;
+  text-shadow: none;
+}
+
+.navbar-links li:hover::after {
+  width: 100%;
+}
+
+.wishlist-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.6rem 1.2rem;
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .navbar-links { display: none; }
+}

@@ -1,0 +1,102 @@
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  z-index: 2;
+  box-shadow: 0 -20px 50px rgba(0,0,0,0.8);
+}
+
+.terminal-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #0a0a0c;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.1), 
+              inset 0 0 20px rgba(0, 0, 0, 0.8),
+              0 0 0 10px #222,
+              0 0 0 12px #111;
+  position: relative;
+}
+
+.terminal-screen {
+  background-color: #020a02;
+  border-radius: 5px;
+  padding: 30px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+/* CRT Scanlines */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Subtle CRT Glow and flicker */
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 100px rgba(0, 255, 64, 0.1);
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+  z-index: 5;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+.terminal-text {
+  font-family: var(--font-detail);
+  color: #0f0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  z-index: 20;
+  position: relative;
+}
+
+.cursor {
+  display: inline-block;
+  width: 12px;
+  animation: blink 1s step-end infinite;
+  color: #0f0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .terminal-screen {
+    height: 500px;
+  }
+  .terminal-text {
+    font-size: 1rem;
+  }
+}
