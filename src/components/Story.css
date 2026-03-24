@@ -28,7 +28,8 @@
   background-color: #020a02;
   border-radius: 5px;
   padding: 30px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
@@ -102,7 +103,8 @@
   }
   .terminal-screen {
     padding: 15px;
-    height: 450px;
+    min-height: 450px;
+    height: auto;
   }
   .terminal-text {
     font-size: 0.95rem;
