@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <a href="#twitter" className="social-link">Twitter/X</a>
           <a href="#discord" className="social-link">Discord</a>
           <a href="#youtube" className="social-link">YouTube</a>
-          <a href="#presskit" className="social-link">Press Kit</a>
+          <a href="https://drive.google.com/drive/folders/1UD6jIUM4VGmwq7rkkAElxqLvOzjS3vF3?usp=sharing" target="_blank" rel="noopener noreferrer" className="social-link">Press Kit</a>
         </div>
         
         <div className="legal-section">
