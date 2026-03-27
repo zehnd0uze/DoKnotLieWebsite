@@ -44,10 +44,10 @@ const Features: React.FC = () => {
   return (
     <section id="features" className="features-section">
       <div className="features-header">
-        <h2 className="section-title">Investigation Mechanics</h2>
+        <h2 className="section-title">Investigation Gameplay</h2>
         <div className="title-underline"></div>
       </div>
-      
+
       <div className="features-grid">
         {features.map((feature) => (
           <div key={feature.id} className="feature-card">

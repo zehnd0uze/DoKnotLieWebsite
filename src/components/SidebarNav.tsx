@@ -9,14 +9,14 @@ const SidebarNav: React.FC = () => {
     { id: 'videos', label: 'TRAILERS' },
     { id: 'chapters', label: 'CASES' },
     { id: 'multiplayer', label: 'MULTIPLAYER' },
-    { id: 'features', label: 'PLAY' },
+    { id: 'features', label: 'GAMEPLAY' },
     { id: 'gallery', label: 'MEDIA' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section.id);
         if (element) {
@@ -45,8 +45,8 @@ const SidebarNav: React.FC = () => {
   return (
     <div className="sidebar-nav">
       {sections.map((section) => (
-        <div 
-          key={section.id} 
+        <div
+          key={section.id}
           className={`nav-dot-container ${activeSection === section.id ? 'active' : ''}`}
           onClick={() => scrollToSection(section.id)}
         >
